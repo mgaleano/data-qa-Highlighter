@@ -1,25 +1,22 @@
 // QA data-* attibutes names array
-var qaelem = '[data-qa], [data-test]';
+var qaelem = '[data-testid]';
 // QA elements selector
-var dataqas = document.querySelectorAll(qaelem);
+var dataAttr = document.querySelectorAll(qaelem);
 
 // DIV selector
 var divs = document.getElementsByTagName("DIV");
 
 // Applying styles and making some stuff for the QA elements found in DOM
-for (var i = 0; i < dataqas.length; i++) {
-    var d = dataqas[i];
-    dataQaTxt = d.getAttribute("data-qa");
-    dataElemTxt = d.getAttribute("data-test");
+for (var i = 0; i < dataAttr.length; i++) {
+    var d = dataAttr[i];
+    
+    dataElemTxt = d.getAttribute("data-testid");
     var qaBoxTxt;
-    if (dataQaTxt) {
-        qaBoxTxt = dataQaTxt
-    }
-    ;
+    
     if (dataElemTxt) {
         qaBoxTxt = dataElemTxt
     }
-    ;
+    
     var qabox = '<div class="qa-box">' + qaBoxTxt + '</div>';
     var elems = ['SELECT', 'TEXTAREA', 'INPUT', 'BUTTON', 'SPAN'];
     d.style.border = "2px red solid";

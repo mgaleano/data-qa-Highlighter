@@ -1,14 +1,14 @@
 html {
     color: #FFF;
-    height: 400px;
-    width: 500px;
+    height: 320px;
+    width: 470px;
     background: radial-gradient(ellipse at bottom, #181f2c 0%, #181f2c 100%);
     overflow: hidden;
 }
 
 body {
-    height: 400px;
-    width: 500px;
+    height: 320px;
+    width: 470px;
     overflow: hidden;
 }
 .qa-btn {

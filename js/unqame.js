@@ -1,13 +1,13 @@
 // Removing highlighters and rolling back the magic.
 var qaboxelem = document.querySelectorAll(".qa-box");
-var qaelem = '[data-qa], [data-test]';
+var qaelem = '[data-testid]';
 // DIV selector
 var divs = document.getElementsByTagName("DIV");
 // QA elements selector
-var dataqas = document.querySelectorAll(qaelem);
+var dataAttr = document.querySelectorAll(qaelem);
 
-for (var i = 0; i < dataqas.length; i++) {
-    var d = dataqas[i];
+for (var i = 0; i < dataAttr.length; i++) {
+    var d = dataAttr[i];
     d.style.border = "";
     d.style.backgroundColor = "";
     d.style.position = "";

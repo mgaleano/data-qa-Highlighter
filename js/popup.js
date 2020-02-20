@@ -1,20 +1,20 @@
 // Scripts for the popup
 
 var found = document.getElementById("found");
-var foundHtml = 'No elements found in the DOM, but you can check this <a href=\"https://output.jsbin.com/sikokog\" target=\"_blank\" class="link">demo page</a>';
+var foundHtml = 'No elements found in the DOM...';
 
 
 // Number of data-qa elements found in the DOM
 function getDOM() {
-    return document.querySelectorAll('[data-qa], [data-test]').length;
+    return document.querySelectorAll('[data-testid]').length;
 }
 
 //Highlight QA elements
 function qame() {
     var qameBtn = document.getElementById("qame");
-    qameBtn.innerHTML = 'data-qa showed!!';
+    qameBtn.innerHTML = 'Hightlighting...';
     setTimeout(function () {
-        qameBtn.innerHTML = 'HIGHLIGHT data-qa';
+        qameBtn.innerHTML = 'Highlight';
     }, 1000);
     //Current tab functions
     browser.tabs.executeScript(null, {
@@ -44,16 +44,16 @@ function qame() {
 //Remove QA elements
 function unqame() {
     var unQameBtn = document.getElementById("unqame");
-    unQameBtn.innerHTML = 'data-qa removed!!';
+    unQameBtn.innerHTML = 'Done...';
     setTimeout(function () {
-        unQameBtn.innerHTML = 'REMOVE data-qa';
+        unQameBtn.innerHTML = 'Remove';
     }, 1000);
     //Current tab functions
     browser.tabs.executeScript(null, {
         //Removing extension content in DOM
         file: '/js/unqame.js'
     });
-    found.innerHTML = 'Highlighted data-qa removed !!'
+    found.innerHTML = 'Highlights removed...'
 }
 
 document.getElementById('qame').addEventListener('click', qame);
